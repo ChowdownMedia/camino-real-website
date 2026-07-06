@@ -194,6 +194,6 @@ main{background:#14110E;color:#F4EDDD}
       <span>Powered by Chowdown</span>
     </div>
   </div></footer>
-<script>(function(){var b=document.querySelector('[aria-label="Open menu"]'),n=document.getElementById("cr-mnav");if(b&&n){b.addEventListener("click",function(){var o=n.style.display!=="flex";n.style.display=o?"flex":"none";b.setAttribute("aria-expanded",o?"true":"false")});n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.style.display="none"}})}})();</script>
+<script>(function(){var bs=document.querySelectorAll('[aria-label="Open menu"]');bs.forEach(function(b){var hd=b.closest("header")||document;var n=hd.querySelector("#cr-mnav");if(!n)return;b.addEventListener("click",function(){var o=n.style.display!=="flex";n.style.display=o?"flex":"none";b.setAttribute("aria-expanded",o?"true":"false")});n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.style.display="none"}})})})();</script>
 </body>
 </html>

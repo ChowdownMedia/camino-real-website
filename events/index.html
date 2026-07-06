@@ -213,8 +213,8 @@ x-dc{display:none!important}
 </div>
 <script>
 (function(){
-  var burger=document.querySelector('[aria-label="Open menu"]'), mnav=document.getElementById('cr-mnav');
-  if(burger&&mnav){burger.addEventListener('click',function(){var o=mnav.style.display!=='flex';mnav.style.display=o?'flex':'none';});mnav.addEventListener('click',function(e){if(e.target.tagName==='A')mnav.style.display='none';});}
+  var burgers=document.querySelectorAll('[aria-label="Open menu"]');
+  burgers.forEach(function(burger){var hd=burger.closest('header')||document;var mnav=hd.querySelector('#cr-mnav');if(!mnav)return;burger.addEventListener('click',function(){var op=mnav.style.display!=='flex';mnav.style.display=op?'flex':'none';burger.setAttribute('aria-expanded',op?'true':'false');});mnav.addEventListener('click',function(e){if(e.target.tagName==='A')mnav.style.display='none';});});
   var grid=document.getElementById('ev-grid');
   if(grid){var cs=[].slice.call(grid.querySelectorAll('.ev-c')),t=new Date();t.setHours(0,0,0,0);var n=0;
     cs.forEach(function(c){var d=new Date(c.getAttribute('data-event-date')+'T00:00:00');if(d<t)c.style.display='none';else n++;});

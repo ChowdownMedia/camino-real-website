@@ -265,8 +265,8 @@ x-dc{display:none!important}
 
 <script>
 (function(){
-  var burger=document.querySelector('[aria-label="Open menu"]'), mnav=document.getElementById('cr-mnav');
-  if(burger&&mnav){burger.addEventListener('click',function(){var o=mnav.style.display!=='flex';mnav.style.display=o?'flex':'none';});mnav.addEventListener('click',function(e){if(e.target.tagName==='A')mnav.style.display='none';});}
+  var burgers=document.querySelectorAll('[aria-label="Open menu"]');
+  burgers.forEach(function(burger){var hd=burger.closest('header')||document;var mnav=hd.querySelector('#cr-mnav');if(!mnav)return;burger.addEventListener('click',function(){var op=mnav.style.display!=='flex';mnav.style.display=op?'flex':'none';burger.setAttribute('aria-expanded',op?'true':'false');});mnav.addEventListener('click',function(e){if(e.target.tagName==='A')mnav.style.display='none';});});
   var f=document.getElementById('contact-form'); if(!f) return;
   var st=document.getElementById('c-status');
   f.addEventListener('submit',function(e){e.preventDefault();
@@ -279,7 +279,7 @@ x-dc{display:none!important}
     fd.append('description',g('c-msg')); fd.append('_gotcha','');
     fetch('https://chowdownos.onrender.com/api/public/forms/submit',{method:'POST',body:fd})
       .then(function(r){return r.json().catch(function(){throw 0;});})
-      .then(function(res){if(!res||res.ok===false)throw 0; f.innerHTML='<p style="color:#E7C98A;font-family:'Playfair Display',serif;font-size:20px">Gracias! Thanks for reaching out. We will get back to you soon.</p>';})
+      .then(function(res){if(!res||res.ok===false)throw 0; f.innerHTML='<p style="color:#E7C98A;font-family:\'Playfair Display\',serif;font-size:20px">Gracias! Thanks for reaching out. We will get back to you soon.</p>';})
       .catch(function(){btn.textContent=old;btn.disabled=false; st.style.color='#ff9a8a'; st.textContent='Something went wrong. Please call (615) 907-8778.';});
   });
 })();
