@@ -156,17 +156,10 @@ x-dc{display:none!important}
 </section>
 <section style="background:#1B1006;color:#F4EDDD;padding:72px 20px">
   <div style="max-width:620px;margin:0 auto;text-align:center">
-    <p style="font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:#E7C98A;margin:0 0 12px">Private events</p>
-    <h2 style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(28px,5vw,40px);margin:0 0 10px">Host your celebration with us</h2>
-    <p style="color:#D8CDB8;margin:0 auto 26px;max-width:50ch">Birthdays, quinceaneras, business dinners or a big group. Tell us what you are planning.</p>
-    <form class="ev-form" id="ev-form" style="display:grid;gap:14px;text-align:left" novalidate>
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px" data-two-col="true"><input id="e-name" placeholder="Full name" autocomplete="name" required><input id="e-phone" type="tel" placeholder="Phone" autocomplete="tel" required></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px" data-two-col="true"><input id="e-email" type="email" placeholder="Email" autocomplete="email" required><input id="e-people" type="number" min="1" placeholder="Guests"></div>
-      <textarea id="e-msg" rows="4" placeholder="Tell us about your event" required></textarea>
-      <button type="submit" style="background:#B4271E;color:#F7F1E6;border:none;padding:16px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;cursor:pointer">Send request</button>
-      <p id="ev-status" role="status" aria-live="polite" style="margin:0;font-weight:600"></p>
-    </form>
+    <p style="font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:#E7C98A;margin:0 0 12px">Get in touch</p>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(28px,5vw,40px);margin:0 0 10px">Questions or a big group?</h2>
+    <p style="color:#D8CDB8;margin:0 auto 26px;max-width:50ch">Reach out about a reservation, a big group or catering and we will get right back to you.</p>
+    <form class="ev-form" id="contact-form" style="display:grid;gap:14px;text-align:left" novalidate><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px" data-two-col="true"><div style="display:flex;flex-direction:column;gap:7px"><label for="c-first" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#B08D4F">First name</label><input id="c-first" required style="background:rgba(247,241,230,.06);border:1px solid rgba(176,141,79,.4);border-radius:2px;padding:13px 14px;color:#F4EDDD;font:inherit;font-size:15px;width:100%"></div><div style="display:flex;flex-direction:column;gap:7px"><label for="c-last" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#B08D4F">Last name</label><input id="c-last" required style="background:rgba(247,241,230,.06);border:1px solid rgba(176,141,79,.4);border-radius:2px;padding:13px 14px;color:#F4EDDD;font:inherit;font-size:15px;width:100%"></div></div><div style="display:flex;flex-direction:column;gap:7px"><label for="c-email" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#B08D4F">Email</label><input id="c-email" type="email" required style="background:rgba(247,241,230,.06);border:1px solid rgba(176,141,79,.4);border-radius:2px;padding:13px 14px;color:#F4EDDD;font:inherit;font-size:15px;width:100%"></div><div style="display:flex;flex-direction:column;gap:7px"><label for="c-msg" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#B08D4F">Message</label><textarea id="c-msg" rows="4" required style="background:rgba(247,241,230,.06);border:1px solid rgba(176,141,79,.4);border-radius:2px;padding:13px 14px;color:#F4EDDD;font:inherit;font-size:15px;width:100%;resize:vertical"></textarea></div><button type="submit" style="background:#B4271E;color:#F7F1E6;border:none;padding:16px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;cursor:pointer">Send message</button><p id="c-status" role="status" aria-live="polite" style="margin:0;font-weight:600"></p></form>
   </div>
 </section></main><footer style="background: rgb(20, 17, 14); color: rgb(216, 205, 184); padding: 64px 20px 30px;">
   <div style="max-width: 1180px; margin: 0px auto;">
@@ -213,43 +206,25 @@ x-dc{display:none!important}
 <script>
 (function(){
   var burger=document.querySelector('[aria-label="Open menu"]'), mnav=document.getElementById('cr-mnav');
-  if(burger&&mnav){burger.addEventListener('click',function(){var o=mnav.style.display!=='flex';mnav.style.display=o?'flex':'none';burger.setAttribute('aria-expanded',o?'true':'false');});
-    mnav.addEventListener('click',function(e){if(e.target.tagName==='A'){mnav.style.display='none';}});}
-  var lb=document.getElementById('cr-lb'); if(!lb) return;
-  var img=document.getElementById('cr-lb-img'), cap=document.getElementById('cr-lb-cap');
-  var btns=[].slice.call(document.querySelectorAll('[data-full]')), i=0;
-  function show(){img.src=btns[i].getAttribute('data-full');cap.textContent=btns[i].getAttribute('data-cap')||'';img.alt=cap.textContent;}
-  function open(n){i=n;show();lb.style.display='flex';}
-  function close(){lb.style.display='none';}
-  btns.forEach(function(bn,n){bn.addEventListener('click',function(e){e.preventDefault();open(n);});});
-  document.getElementById('cr-lb-close').addEventListener('click',close);
-  document.getElementById('cr-lb-prev').addEventListener('click',function(){i=(i+btns.length-1)%btns.length;show();});
-  document.getElementById('cr-lb-next').addEventListener('click',function(){i=(i+1)%btns.length;show();});
-  lb.addEventListener('click',function(e){if(e.target===lb)close();});
-  document.addEventListener('keydown',function(e){if(lb.style.display!=='flex')return;if(e.key==='Escape')close();if(e.key==='ArrowLeft'){i=(i+btns.length-1)%btns.length;show();}if(e.key==='ArrowRight'){i=(i+1)%btns.length;show();}});
-})();
-</script>
-<script>
-(function(){
-  var burger=document.querySelector('[aria-label="Open menu"]'), mnav=document.getElementById('cr-mnav');
   if(burger&&mnav){burger.addEventListener('click',function(){var o=mnav.style.display!=='flex';mnav.style.display=o?'flex':'none';});mnav.addEventListener('click',function(e){if(e.target.tagName==='A')mnav.style.display='none';});}
   var grid=document.getElementById('ev-grid');
-  if(grid){var cs=[].slice.call(grid.querySelectorAll('.ev-c')),t=new Date();t.setHours(0,0,0,0),n=0;
+  if(grid){var cs=[].slice.call(grid.querySelectorAll('.ev-c')),t=new Date();t.setHours(0,0,0,0);var n=0;
     cs.forEach(function(c){var d=new Date(c.getAttribute('data-event-date')+'T00:00:00');if(d<t)c.style.display='none';else n++;});
-    if(n===0){cs.forEach(function(c){c.style.display=''});document.getElementById('ev-none').style.display='block';}}
-  var f=document.getElementById('ev-form'); if(!f) return;
-  var st=document.getElementById('ev-status');
+    if(n===0){cs.forEach(function(c){c.style.display=''});var none=document.getElementById('ev-none');if(none)none.style.display='block';}}
+  var f=document.getElementById('contact-form'); if(!f) return;
+  var st=document.getElementById('c-status');
   f.addEventListener('submit',function(e){e.preventDefault();
     var hp=f.querySelector('[name=_gotcha]'); if(hp&&hp.value)return;
     if(!f.checkValidity()){f.reportValidity();return;}
     var g=function(id){return (document.getElementById(id).value||'').trim();};
-    var btn=f.querySelector('button'); btn.textContent='Sending...'; btn.disabled=true;
-    var fd=new FormData(); fd.append('type','parties'); fd.append('client','349');
-    fd.append('ce-name',g('e-name')); fd.append('ce-phone',g('e-phone')); fd.append('ce-email',g('e-email')); fd.append('ce-people',g('e-people')); fd.append('description',g('e-msg')); fd.append('_gotcha','');
+    var btn=f.querySelector('button'); var old=btn.textContent; btn.textContent='Sending...'; btn.disabled=true;
+    var fd=new FormData(); fd.append('type','contact'); fd.append('client','349');
+    fd.append('co-name',(g('c-first')+' '+g('c-last')).trim()); fd.append('co-phone',''); fd.append('co-email',g('c-email'));
+    fd.append('description',g('c-msg')); fd.append('_gotcha','');
     fetch('https://chowdownos.onrender.com/api/public/forms/submit',{method:'POST',body:fd})
       .then(function(r){return r.json().catch(function(){throw 0;});})
-      .then(function(res){if(!res||res.ok===false)throw 0; st.style.color='#E7C98A'; st.textContent='Gracias! Your event request is in. We will reach out shortly.'; f.reset(); btn.style.display='none';})
-      .catch(function(){btn.textContent='Send request';btn.disabled=false; st.style.color='#ff9a8a'; st.textContent='Something went wrong. Please try again.';});
+      .then(function(res){if(!res||res.ok===false)throw 0; st.style.color='#E7C98A'; st.textContent='Gracias! Thanks for reaching out. We will get back to you soon.'; f.reset(); btn.style.display='none';})
+      .catch(function(){btn.textContent=old;btn.disabled=false; st.style.color='#ff9a8a'; st.textContent='Something went wrong. Please try again.';});
   });
 })();
 </script>
