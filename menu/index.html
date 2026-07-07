@@ -108,17 +108,17 @@ x-dc{display:none!important}
 .mjump-in{max-width:1080px;margin:0 auto;padding:0 22px;display:flex;gap:8px;overflow-x:auto;white-space:nowrap}
 .mjump a{flex:0 0 auto;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#D8CDB8;text-decoration:none;border:1px solid rgba(176,141,79,.35);padding:7px 13px;border-radius:999px}
 .mjump a:hover{background:#B4271E;border-color:#B4271E;color:#F7F1E6} .mjump a.active{background:#B4271E;border-color:#B4271E;color:#F7F1E6} .msec.is-hidden{display:none}
-.mcols{columns:2;column-gap:52px}
-@media(max-width:720px){.mcols{columns:1}}
-.msec{break-inside:avoid;margin-bottom:34px;display:inline-block;width:100%}
-.msec-t{font-family:'Playfair Display',serif;font-weight:800;font-size:24px;color:#E7C98A;margin:0 0 4px;padding-bottom:8px;border-bottom:2px solid rgba(176,141,79,.4);display:flex;align-items:center;gap:10px}
+.mcols{max-width:1080px;margin:0 auto}
+@media@media(max-width:860px){.mlist{column-count:2}}@media(max-width:560px){.mlist{column-count:1}}
+.msec{margin-bottom:46px}
+.msec-t{font-family:'Playfair Display',serif;font-weight:800;font-size:24px;color:#E7C98A;margin:0 0 4px;padding-bottom:8px;border-bottom:2px solid rgba(176,141,79,.4);display:flex;align-items:center;justify-content:center;text-align:center;gap:10px}
 .msec-t:before{content:'';width:14px;height:14px;background:#B4271E;transform:rotate(45deg);flex:0 0 auto}
-.mlist{list-style:none;margin:0;padding:0}
-.mi{padding:11px 0;border-bottom:1px solid rgba(176,141,79,.12)}
-.mi-h{display:flex;align-items:baseline;gap:8px}
-.mi-n{font-weight:700;color:#F4EDDD;font-size:15.5px}
-.mi-dot{flex:1;border-bottom:1px dotted rgba(176,141,79,.45);transform:translateY(-3px)}
-.mi-p{font-weight:700;color:#E7C98A;font-size:15px;flex:0 0 auto}
+.mlist{list-style:none;margin:0 auto;padding:0;column-count:3;column-gap:44px;max-width:1000px}
+.mi{break-inside:avoid;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed rgba(176,141,79,.28)}
+.mi-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.mi-n{font-weight:700;color:#F4EDDD;font-size:15.5px;flex:1 1 auto;min-width:0}
+.mi-dot{display:none}
+.mi-p{font-weight:700;color:#E7C98A;font-size:15px;flex:0 0 auto;text-align:right;padding-left:6px}
 .mi-d{margin:3px 0 0;color:#B7AD9B;font-size:13px;line-height:1.5}
 .mnote{text-align:center;color:#948a78;font-size:12px;margin-top:20px}
 
