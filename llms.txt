@@ -1,0 +1,14 @@
+# Camino Real
+
+> Camino Real. 5 locations across Murfreesboro and Smyrna, TN. Menu and online ordering (pickup + delivery) per location.
+
+## Locations
+- [Cedar Glades](https://www.caminorealmexicanrestaurants.com/cedar-glades/): 3919 Cedar Glades Dr, Murfreesboro, TN, 37129
+- [Memorial](https://www.caminorealmexicanrestaurants.com/memorial/): 3359 Memorial Blvd, Murfreesboro, TN, 37129
+- [Old Fort](https://www.caminorealmexicanrestaurants.com/old-fort/): 2450 Old Fort Pkwy, Murfreesboro, TN, 37128
+- [Sam Ridley](https://www.caminorealmexicanrestaurants.com/sam-ridley/): 408 W Sam Ridley Pkwy, Smyrna, TN, 37167
+- [South Church](https://www.caminorealmexicanrestaurants.com/south-church/): 3205 S Church St, Murfreesboro, TN, 37127
+
+## Pages
+- [Menu](https://www.caminorealmexicanrestaurants.com/menu/)
+- [All Locations](https://www.caminorealmexicanrestaurants.com/locations/)
